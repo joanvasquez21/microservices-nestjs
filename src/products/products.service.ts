@@ -28,6 +28,7 @@ export class ProductsService extends PrismaClient implements OnModuleInit {
 
     // para saber el total de paginas
     const totalPages = await this.product.count();
+    // numero de la ultima pagina, con math.ceil redondeamos el resultado hacia arriba
     const lastPage = Math.ceil(totalPages / limit);
 
     return {
